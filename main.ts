@@ -1,5 +1,6 @@
 #! /usr/bin/env node
 
+import chalk from "chalk";
 import inquirer from "inquirer"
 
 let todos = [];
@@ -12,14 +13,14 @@ while(condition)
         {
             name: 'todo',
             type: 'input',
-            message: 'What you want to add in your todos?'
+            message: chalk.cyanBright ('What you want to add in your todos?')
         },
-
+ 
         {
             name: 'addMore',
             type: 'confirm',
-            message: 'Do you want to add more?',
-            default:'false'
+            message: chalk.cyanBright('Do you want to add more?'),
+            default:'true'
         }
     ]
 );
@@ -28,5 +29,5 @@ todos.push(addTask.todo);
 condition = addTask.addMore;
 console.log(todos);
 
-
 }
+
